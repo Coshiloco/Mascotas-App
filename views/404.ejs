@@ -1,0 +1,11 @@
+<!--Para importar el codigo de cabecera del archivo .ejs y asi reutilizar el codigo
+tenemso que utilzar la sintaxis de Entre los parentesis 
+va la ruta del archivo donde queremos importar nuestro archivo -->
+
+<%- include('template/cabecera', {tituloweb: 'Pagina de Error'}); %>
+
+    <h1><%= error %></h1>
+    <h2><%= descripcion %></h2>
+
+    
+<%- include('template/footer') %>
