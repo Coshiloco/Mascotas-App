@@ -304,7 +304,7 @@ de express funciona correctamente si no imprimira solo la pagina de inicio
 pero no las peticiones de /servicios que le hemps indicado
 con las rutas de express en los metodos GET */
 
-app.listen(PORT, () => {
+aplicacion.listen(PORT, () => {
     console.log(`Our app is running on port ${ PORT }`);
 });
 
