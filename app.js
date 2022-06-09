@@ -308,6 +308,13 @@ aplicacion.listen(port, () => {
     console.log(`Our app is running on port ${ port }`);
 });
 
+/*Dado que en el package.json en la parte de scripts
+le hemos puesto 
+el comando dev y le hemos dicho que jecute app jss
+si hacemos el comando npm run dev
+lo que estamos haciendo es utilizar un atajo
+que nos ejecuta el server en local
+y asi podemos hacer las pruebas en local como desarrolladores*/
 
 
 /*He imprimimso por consola paar comprobar 
