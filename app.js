@@ -149,6 +149,8 @@ const path = require('path');
 
 //Creamos la aplicacion de express guardandola en la constante aplicacion
 const aplicacion = expressServidor();
+//const pro
+const pro = require('process');
 
 aplicacion.use(expressServidor.static(path.join(__dirname + '/public')));
 
@@ -169,7 +171,7 @@ Creates an Express application.
 crea una aplicacion de express */
 
 //COnfiguramos el puerto por el que pasa la información 
-const port = process.env.PORT || 3000;
+const PORT = pro.env.PORT || 3000;
 
 /*Si cambiamos de ubicacion esta linea
 aplicacion.use(expressServidor.static(__dirname + "/public"));
@@ -302,15 +304,16 @@ de express funciona correctamente si no imprimira solo la pagina de inicio
 pero no las peticiones de /servicios que le hemps indicado
 con las rutas de express en los metodos GET */
 
-aplicacion.listen(port, () => {
-    console.log(`Express servidor escuchando en el puerto ${PuertoExpress}`);
-    console.log(`Estamos concatenando con el puerto en escucha 3000 : variable ${PuertoExpress}
-    concatenada y bajando de linea en javascript `);
-    /*He imprimimso por consola paar comprobar 
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
+
+
+
+/*He imprimimso por consola paar comprobar 
     que efectivamente esta escuchando las peticiones del cliente 
     por el puerto que nosotros le dijimos con la ip local
     que es 127.0.0.1:3000 siendo 3000 el puerto */
-    /*En javascript con ` ${variable a concantenar}` concatenamos variables */
-});
+/*En javascript con ` ${variable a concantenar}` concatenamos variables */
 
 
