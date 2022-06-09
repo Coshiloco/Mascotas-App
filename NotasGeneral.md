@@ -304,3 +304,12 @@ a todo y el require() nos importa el archivo de RutasWeb que queremos
 Lo que conseguimos es modularizar el programa
 que las rutas esten en un archivo aparte con lo que
 se ve todo mas claro
+
+Como hemos comprobado ahora hemos modularizado ya nos es necesario
+poner todas la rutas en la carpeta de app.js sino que ahora dentro de la carpeta
+router y dentro el archivo RutasWeb.js tiene centralizada las rutas
+de manera que incluso las podemos agrupar por metodos
+y con el comando aplicacion.use('/', require('./router/RutasWeb'));
+con esa linea de codigo en javascript en el archivo
+de nuestra aplicacion le decimos que utilize el Router
+en ese archivo recordemos que / es la carpeta raiz del proyecto
