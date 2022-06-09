@@ -15,10 +15,9 @@
                 <% if (arrayMascotas.length > 0) { %>
                     <% arrayMascotas.forEach(mascota => { %>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row"><%= mascota.id %> </th>
+                            <td><%= mascota.nombre %> </td>
+                            <td><%= mascota.descripcion %> </td>
                         </tr>
                     <% }) %>
                 <% } %>
