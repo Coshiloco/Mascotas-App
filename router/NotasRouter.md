@@ -16,3 +16,8 @@
     ##Campiamos el que va a ejecutar los emtodos en vez de ser la API directamente
     va a ser nuestra constante RouterExp que almacena el objeto router
     ## Exportamos la constante que almecena el objeto router que es RouterExp
+
+# Varias rutas por las que se puede hacer los Router
+
+    ## Podemos hacer varios archivos con el Router y asi generar mas rutas para el servidor
+    como vamos ha hacer con el archivo

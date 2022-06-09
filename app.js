@@ -6,9 +6,11 @@ const aplicacion = expressServidor();
 
 const pro = require('process');
 
-aplicacion.use(expressServidor.static(path.join(__dirname + '/public')));
+aplicacion.use(expressServidor.static(__dirname + "/public"));
 
 aplicacion.use('/', require('./router/RutasWeb'));
+
+aplicacion.use('/mascotas', require('./router/Mascotas'));
 
 aplicacion.set('view engine', 'ejs');
 
