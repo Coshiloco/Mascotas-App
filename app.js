@@ -169,7 +169,7 @@ Creates an Express application.
 crea una aplicacion de express */
 
 //COnfiguramos el puerto por el que pasa la información 
-const PuertoExpress = process.env.PORT || 3000;
+const PuertoExpress = process.env.PuertoExpress || 3000;
 
 /*Si cambiamos de ubicacion esta linea
 aplicacion.use(expressServidor.static(__dirname + "/public"));
