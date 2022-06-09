@@ -313,3 +313,7 @@ y con el comando aplicacion.use('/', require('./router/RutasWeb'));
 con esa linea de codigo en javascript en el archivo
 de nuestra aplicacion le decimos que utilize el Router
 en ese archivo recordemos que / es la carpeta raiz del proyecto
+
+El archivo de mascotas vamos ha hacer peticiones
+de otro tipo como put delete 
+y otro tipo de verbos HTTP
