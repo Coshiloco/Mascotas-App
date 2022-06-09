@@ -169,7 +169,7 @@ Creates an Express application.
 crea una aplicacion de express */
 
 //COnfiguramos el puerto por el que pasa la información 
-const PuertoExpress = process.env.PuertoExpress || 3000;
+const PORT = process.env.PORT || 3000;
 
 /*Si cambiamos de ubicacion esta linea
 aplicacion.use(expressServidor.static(__dirname + "/public"));
@@ -302,7 +302,7 @@ de express funciona correctamente si no imprimira solo la pagina de inicio
 pero no las peticiones de /servicios que le hemps indicado
 con las rutas de express en los metodos GET */
 
-aplicacion.listen(PuertoExpress, () => {
+aplicacion.listen(PORT, () => {
     console.log(`Express servidor escuchando en el puerto ${PuertoExpress}`);
     console.log(`Estamos concatenando con el puerto en escucha 3000 : variable ${PuertoExpress}
     concatenada y bajando de linea en javascript `);
