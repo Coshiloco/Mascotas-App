@@ -8,20 +8,13 @@ const pro = require('process');
 
 aplicacion.use(expressServidor.static(path.join(__dirname + '/public')));
 
+aplicacion.use('/', require('./router/RutasWeb'));
+
 aplicacion.set('view engine', 'ejs');
 
 aplicacion.set('views', __dirname + '/views');
 
 const port = pro.env.PORT || 3000;
-
-aplicacion.get('/', (req, res) => {
-    res.render("index", { titulo: "mi titulo dinamico" });
-});
-
-
-aplicacion.get('/servicios', (req, res) => {
-    res.render("servicios", { tituloservicios: "Este es un mensaje dinamico de servicios" });
-});
 
 aplicacion.use((req, res, next) => {
     res.status(404).render("404", {
