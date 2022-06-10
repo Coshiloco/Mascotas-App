@@ -1,11 +1,12 @@
-const mongo = require('mongoose');
-const Schema = mongo.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const mascotaSchema = new Schema({
-    nombre: String,
-    descripcion: String
-})
+  nombre:  String,
+  descripcion: String
+});
 
-const Mascota = mongo.model('Mascota', mascotaSchema);
+// Crear el modelo
+const Mascota = mongoose.model('Mascota', mascotaSchema);
 
 module.exports = Mascota;
