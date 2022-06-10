@@ -22,11 +22,7 @@ const port = pro.env.PORT || 3000;
 
 const mongoose = require('mongoose');
 
-const usuario = "youtube_vet";
-const password = "oLm1rABh85bY4YsC";
-const dbName = "veterinaria";
-
-const uri = `mongodb+srv://${usuario}:${password}@primeradbmongo.ua2xmjf.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${pro.env.USUARIO}:${pro.env.PASSWORD}@primeradbmongo.ua2xmjf.mongodb.net/${pro.env.DBNAME}?retryWrites=true&w=majority`;
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(()=> console.log('Base de datos conectada')) 
