@@ -8,7 +8,9 @@ RouterExp.get('/', async (req, res) => {
 
     try{
 
-        const arraymascotasdb = await Mascota.find({});
+        const arraymascotasdb = await Mascota.find({ nombre
+            :"rex", descripcion
+            :"rex descripcion" }).exec();
         
         console.log(arraymascotasdb);
 
