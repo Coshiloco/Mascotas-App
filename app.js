@@ -6,6 +6,8 @@ const aplicacion = expressServidor();
 
 const pro = require('process');
 
+require('dotenv').config();
+
 aplicacion.use(expressServidor.static(__dirname + "/public"));
 
 aplicacion.use('/', require('./router/RutasWeb'));
