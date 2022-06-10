@@ -2,7 +2,20 @@ const ExpressAPI = require('express');
 
 const RouterExp = ExpressAPI.Router();
 
-RouterExp.get('/', (req, res) => {
+const Mascota = require('../models/mascota');
+
+RouterExp.get('/', async (req, res) => {
+
+    try{
+
+        const arraymascotasdb = await Mascota.find();
+        
+        console.log(arraymascotasdb);
+
+    }catch (error) {
+        console.log(error);
+    }
+
     res.render("mascotas", {
         arrayMascotas : [
             {id : 'sdfsdfsd', nombre : 'rex', descripcion : 'descriptiva'},
