@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Mascota = require('../models/mascota')
 
-router.get('/', async (req, res) => {
+router.get('/mascotas', async (req, res) => {
     try {
         const arrayMascotas = await Mascota.find();
         console.log(arrayMascotas)
