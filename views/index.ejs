@@ -1,12 +1,6 @@
-<!--Para importar el codigo de cabecera del archivo .ejs y asi reutilizar el codigo
-tenemso que utilzar la sintaxis de Entre los parentesis 
-va la ruta del archivo donde queremos importar nuestro archivo -->
+<%- include("template/cabecera", {tituloWeb: 'Página de inicio'}) %>
 
-<%- include('template/cabecera', {tituloweb: 'Pagina de Inicio'}); %>
-
-    <h1>Titulo de mi sitio web Index</h1>
-    <!--Para poder pintar la variable que le pasamos en el archivo javascript
-    tenemos que hacer lo siguiente-->
+    <h1 class="text-primary">Titulo de mi sitio web Index</h1>
     <h2><%= titulo %></h2>
-    
-<%- include('template/footer') %>
+
+<%- include("template/footer") %>

@@ -1,12 +1,5 @@
-<!--Para importar el codigo de cabecera del archivo .ejs y asi reutilizar el codigo
-tenemso que utilzar la sintaxis de Entre los parentesis 
-va la ruta del archivo donde queremos importar nuestro archivo -->
+<%- include("template/cabecera", {tituloWeb: 'Página de servicios'}) %>
 
-<%- include('template/cabecera', {tituloweb: 'Pagina de Servicios'}); %>
-
-<!--Aqui nuevamente vamos a utilizar el formato de ejs para pasar variables de documentos
-de javasript de la app con el metodo render y la forma como recordamos es   y asi la pasamos parecido a php-->
-
-<h1><%= tituloservicios %></h1>
-
-<%- include('template/footer') %>
+    <h1><%= tituloServicios %></h1>
+    
+<%- include("template/footer") %>

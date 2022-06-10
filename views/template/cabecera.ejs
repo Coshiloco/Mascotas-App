@@ -1,19 +1,13 @@
-<!--Lo que estamos haciendo es generar una plantilla para todos los 
-archivos ejs y asi reutilizar codigo-->
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EJS - <%= tituloweb %></title>
-    <link rel="stylesheet" href="../css/bootstrap.css" />
-  </head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS - <%= tituloWeb %></title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
 
 <body>
 
-  <%- include('navbar') %>
-
-</body>
-</html>
+    <%- include("navbar") %>
