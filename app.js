@@ -24,7 +24,7 @@ const usuario = "youtube_vet";
 const password = "oLm1rABh85bY4YsC";
 const dbName = "veterinaria";
 
-const uri = `mongodb+srv://${usuario}:${password}@primeradbmongo.ua2xmjf.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${usuario}:${password}@primeradbmongo.ua2xmjf.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(()=> console.log('Base de datos conectada')) 
