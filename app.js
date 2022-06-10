@@ -18,19 +18,18 @@ aplicacion.set('views', __dirname + '/views');
 
 const port = pro.env.PORT || 3000;
 
-const MongoDBConexion = require('mongoose');
+const mongoose = require('mongoose');
 
-const user = 'youtube_vet';
+const usuario = "youtube_vet"
+const password = "oLm1rABh85bY4YsC"
+const dbName = "veterinaria"
 
-const password = 'TQAk132bdwiPXO9I';
+const uri = `mongodb+srv://${usuario}:${password}@primeradbmongo.ua2xmjf.mongodb.net/?retryWrites=true&w=majority`;
 
-const url = `mongodb+srv://${user}:${password}@primeradbmongo.ua2xmjf.mongodb.net/?retryWrites=true&w=majority`;
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(()=> console.log('conectado a mongodb')) 
+  .catch(e => console.log('error de conexión', e))
 
-MongoDBConexion.connect(url,
-    { useNewUrlParser: true, useUnifiedTopology: true }
-)
-    .then(() => console.log('Base de datos conectada'))
-    .catch(e => console.log(e))
 
 aplicacion.use((req, res, next) => {
     res.status(404).render("404", {
