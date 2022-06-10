@@ -1,44 +1,44 @@
-const expressServidor = require('express');
+const express = require('express');
+const app = express();
 
-const path = require('path');
+require('dotenv').config()
 
-const aplicacion = expressServidor();
+const port = process.env.PORT || 3000;
 
-const pro = require('process');
-
-require('dotenv').config();
-
-aplicacion.use(expressServidor.static(__dirname + "/public"));
-
-aplicacion.use('/', require('./router/RutasWeb'));
-
-aplicacion.use('/mascotas', require('./router/Mascotas'));
-
-aplicacion.set('view engine', 'ejs');
-
-aplicacion.set('views', __dirname + '/views');
-
-const port = pro.env.PORT || 3000;
-
+// Conexión a Base de datos
 const mongoose = require('mongoose');
 
-const uri = `mongodb+srv://${pro.env.USUARIO}:${pro.env.PASSWORD}@primeradbmongo.ua2xmjf.mongodb.net/${pro.env.DBNAME}?retryWrites=true&w=majority`;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(()=> console.log('Base de datos conectada')) 
-  .catch(e => console.log('error de conexión', e))
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.ncdk5.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+
+mongoose.connect(uri,
+    { useNewUrlParser: true, useUnifiedTopology: true }
+)
+    .then(() => console.log('Base de datos conectada'))
+    .catch(e => console.log(e))
+
+// motor de plantillas
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 
 
-aplicacion.use((req, res, next) => {
+app.use(express.static(__dirname + "/public"));
+
+// Rutas Web
+app.use('/', require('./router/RutasWeb'));
+app.use('/mascotas', require('./router/Mascotas'));
+
+app.use((req, res, next) => {
     res.status(404).render("404", {
-        error: "Este es un mensaje dinamico de error",
-        descripcion: "Pagina web de error"
+        titulo: "404",
+        descripcion: "Título del sitio web"
     })
-});
+})
 
-aplicacion.listen(port, () => {
-    console.log(`Our app is running on port ${ port }`);
-});
+
+app.listen(port, () => {
+    console.log('servidor a su servicio en el puerto', port)
+})
 
 
 

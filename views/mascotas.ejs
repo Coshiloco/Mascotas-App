@@ -1,4 +1,4 @@
-<%- include('template/cabecera', {tituloweb: 'Pagina de Inicio'}); %>
+<%- include("template/cabecera", {tituloWeb: 'Página de inicio'}) %>
 
     <div class="container">
 
@@ -7,23 +7,29 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Accion</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Acción</th>
               </tr>
             </thead>
             <tbody>
+                
                 <% if (arrayMascotas.length > 0) { %>
                     <% arrayMascotas.forEach(mascota => { %>
+                        
                         <tr>
                             <th scope="row"><%= mascota.id %> </th>
-                            <td><%= mascota.nombre %> </td>
-                            <td><%= mascota.descripcion %> </td>
+                            <td><%= mascota.nombre %></td>
+                            <td><%= mascota.descripcion %></td>
+                            <td>@mdo</td>
                         </tr>
+                    
                     <% }) %>
                 <% } %>
+
             </tbody>
           </table>
-          
+
+        
     </div>
-    
-<%- include('template/footer') %>
+
+<%- include("template/footer") %>

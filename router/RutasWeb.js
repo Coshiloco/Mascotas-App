@@ -1,14 +1,13 @@
-const ExpressAPI = require('express');
+const express = require('express');
+const router = express.Router();
 
-const RouterExp = ExpressAPI.Router();
+router.get('/', (req, res) => {
+    // console.log(__dirname)
+    res.render("index", {titulo : "mi titulo dinámico"})
+})
 
-RouterExp.get('/', (req, res) => {
-    res.render("index", { titulo: "mi titulo dinamico" });
-});
+router.get('/servicios', (req, res) => {
+    res.render("servicios", {tituloServicios: "Este es un mensaje dinámico de servicios"})
+})
 
-
-RouterExp.get('/servicios', (req, res) => {
-    res.render("servicios", { tituloservicios: "Este es un mensaje dinamico de servicios" });
-});
-
-module.exports = RouterExp;
+module.exports = router;
