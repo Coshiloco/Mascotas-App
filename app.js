@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 
 
-const uri = `mongodb+srv://${process.env.USUARIO}:${process.env.PASSWORD}@cluster0.ncdk5.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://youtube_vet:I1PX37lrqndZ3onh@cluster0.p1tn4qi.mongodb.net/vaterinaria?retryWrites=true&w=majority`;
 
 mongoose.connect(uri,
     { useNewUrlParser: true, useUnifiedTopology: true }
