@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 
 
-const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@primeradbmongo.ua2xmjf.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.USUARIO}:${process.env.PASSWORD}@primeradbmongo.ua2xmjf.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
 
 mongoose.connect(uri,
