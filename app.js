@@ -18,6 +18,20 @@ aplicacion.set('views', __dirname + '/views');
 
 const port = pro.env.PORT || 3000;
 
+const MongoDBConexion = require('mongoose');
+
+const user = 'youtube_vet';
+
+const password = 'TQAk132bdwiPXO9I';
+
+const url = `mongodb+srv://${user}:${password}@primeradbmongo.ua2xmjf.mongodb.net/?retryWrites=true&w=majority`;
+
+MongoDBConexion.connect(url,
+    { useNewUrlParser: true, useUnifiedTopology: true }
+)
+    .then(() => console.log('Base de datos conectada'))
+    .catch(e => console.log(e))
+
 aplicacion.use((req, res, next) => {
     res.status(404).render("404", {
         error: "Este es un mensaje dinamico de error",

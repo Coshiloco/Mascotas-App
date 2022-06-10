@@ -317,3 +317,18 @@ en ese archivo recordemos que / es la carpeta raiz del proyecto
 El archivo de mascotas vamos ha hacer peticiones
 de otro tipo como put delete 
 y otro tipo de verbos HTTP
+
+Moongose es el driver que nos permite conectarnos
+con la base de datos hay que instalar el npm
+con npm install mongoose --save
+
+Lo basico para hacer la conexion es 
+const user = '';
+
+const password = '';
+
+const url = '';
+
+MongoDBConexion.connect('mongodb://localhost:27017/test',
+    { useNewUrlParser: true, useUnifiedTopology: true }
+);
