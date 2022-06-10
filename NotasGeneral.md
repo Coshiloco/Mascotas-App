@@ -315,14 +315,14 @@ de nuestra aplicacion le decimos que utilize el Router
 en ese archivo recordemos que / es la carpeta raiz del proyecto
 
 El archivo de mascotas vamos ha hacer peticiones
-de otro tipo como put delete 
+de otro tipo como put delete
 y otro tipo de verbos HTTP
 
 Moongose es el driver que nos permite conectarnos
 con la base de datos hay que instalar el npm
 con npm install mongoose --save
 
-Lo basico para hacer la conexion es 
+Lo basico para hacer la conexion es
 const user = '';
 
 const password = '';
@@ -330,5 +330,17 @@ const password = '';
 const url = '';
 
 MongoDBConexion.connect('mongodb://localhost:27017/test',
-    { useNewUrlParser: true, useUnifiedTopology: true }
+{ useNewUrlParser: true, useUnifiedTopology: true }
 );
+
+.env nos genera variables de ntorno añadiendo en app.js
+la linea de require('dotenv').config(); y el archivo .env
+lo tenemos que crear en la ruta del proyecto
+en la ruta raiz del proyecto
+probando a estableceer una variable de entorno que es utilizada
+por todo el proyecto hemos porbado con PORT = 3001
+con lo que nos geenra el proyecto local con el puerto de comunicacion 3001
+en nuestra maquina nos lee la variable de entrono que es global
+y se lee con la sintaxis de process.env. variabel de entrono que nosotros
+pusismo en el archivo .env ubicado en la caprtea raiz d enuestro
+proyecto
