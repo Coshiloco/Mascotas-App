@@ -1,5 +1,11 @@
 <%- include("template/cabecera", {tituloWeb: 'Detalle de la mascota con el ID seleccionado'}) %>
     <div class="container">
-        <h1>Detalle de la Mascota la cual usted selecciono el ID</h1>
+        <% if (error == false) %>
+            <h1>Detalle de la Mascota la cual usted selecciono el ID</h1>
+        <% } %> <% else if (error == true) %>
+                <p>
+                    <%= mensaje %> 
+                </p>
+        <% } %> 
     </div>
 <%- include("template/footer") %>
