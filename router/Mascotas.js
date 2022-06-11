@@ -66,9 +66,7 @@ router.get('/:id', async(req, res) => {
         res.render('detalle', {
             error : true,
             mensaje : "No se encuentra el id del objeto que usted selecciono",
-            id : id,
-            NombreMascota : NombreMascota,
-            DescripcionMascota : DescripcionMascota
+            id : id
         })
     }
 })
