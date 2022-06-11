@@ -45,7 +45,7 @@
 <script>
   const btnEliminar = document.querySelector('#btnEliminar')
   
-  btnEliminar.addEventListener('click', async(data) => {
+  btnEliminar.addEventListener('click', async() => {
    const id = btnEliminar.dataset.id
    try {
     // Al fetch tenemos que pasarle por parametros la ruta del objeto que queremos eliminar su id
@@ -53,12 +53,13 @@
     const datosmascota = await fetch(`/mascotas/${id}`, {
       method : 'delete'
     })
+    console.log(datosmascota)
     const res = await data.json()
-    if (res.estado === true) {
+    if (res) {
       //Lo llevamos otra vez a la ventana de las mascotas
       window.location.href='/mascotas'
     } else {
-      console.log(res)
+      console.log(res.estado)
     }
     } catch (e) {
     console.log(e)
