@@ -53,7 +53,7 @@
     const datosmascota = await fetch(`/mascotas/${id}`, {
       method : 'delete'
     })
-    const respuestaDelete = await data.json()
+    const respuestaDelete = await datosmascota.json()
     if (respuestaDelete.estado === true) {
       //Lo llevamos otra vez a la ventana de las mascotas
       window.location.href='/mascotas'
