@@ -76,7 +76,7 @@ router.delete('/:id', async(req, res) => {
     //leemos el id del objeto
     const id = req.params.id
     try {
-        const mascotaDB = await Mascota.findByIdAndDelete({_id : id})
+        const mascotaDB = await Mascota.find({_id : id})
         if (mascotaDB) {
             res.json({
                 estado : true,
