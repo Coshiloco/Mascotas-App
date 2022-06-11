@@ -108,7 +108,7 @@ router.get('/:id/editar', async(req, res) => {
         mascotaDB : mascotaDB,
         id : id
     })
-    console.log(mascotaDB)
+    console.log(res.mascotaDB)
 })
 
 module.exports = router;
