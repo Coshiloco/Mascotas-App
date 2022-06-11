@@ -40,9 +40,11 @@ router.get('/:id', async(req, res) => {
     //En  mongo DB guion bajo viene el id la propiedad del Objeto almacenado en nuestra BBDD
     const id = req.params.id
 
-    const nombre = req.body.nombre
+    const cuerpoMascota = req.body
 
-    const descripcion = req.body.descripcion
+    const NombreMascota = cuerpoMascota.nombre
+
+    const DescripcionMascota = cuerpoMascota.descripcion
 
     try {
 
@@ -56,8 +58,8 @@ router.get('/:id', async(req, res) => {
             //Para que el usuario no ponga una id inexistente ponemos el error a falso
             error : false,
             id : id,
-            nombre : nombre,
-            descripcion : descripcion
+            NombreMascota : NombreMascota,
+            DescripcionMascota : DescripcionMascota
         })
 
     } catch (error) {
@@ -67,8 +69,8 @@ router.get('/:id', async(req, res) => {
             error : true,
             mensaje : "No se encuentra el id del objeto que usted selecciono",
             id : id,
-            nombre : nombre,
-            descripcion : descripcion
+            NombreMascota : NombreMascota,
+            DescripcionMascota : DescripcionMascota
         })
     }
 })

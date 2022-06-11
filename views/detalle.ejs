@@ -2,11 +2,11 @@
     <div class="container">
        <% if (error == true) { %>
             <p>
-                <%= mensaje %>&nbsp<%= id %>&nbsp<%= nombre %>&nbsp<%= descripcion %>  
+                <%= mensaje %>&nbsp<%= id %>&nbsp<%= NombreMascota %>&nbsp<%= DescripcionMascota %>  
             </p>
        <% } else { %> 
             <h1>Detalle de La Mascota con el ID <%= id %> , cuyo
-            nombre es <%= nombre %> y cuya descripcion es <%= descripcion %>   </h1>
+            nombre es <%= NombreMascota %> y cuya descripcion es <%= DescripcionMascota %>   </h1>
        <% } %> 
     </div>
 <%- include("template/footer") %>
