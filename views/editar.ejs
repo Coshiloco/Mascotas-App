@@ -1,25 +1,5 @@
-<%- include("template/cabecera", {tituloWeb: 'Crear Nueva Mascota'}) %>
+<%- include("template/cabecera", {tituloWeb: 'Editar la Mascota Seleccionada'}) %>
     <div class="container">
-        <h1>Editar la Mascota cuyo id es : <%= mascotaDB.id %> y cuyo nombre es : <%= mascotaDB.nombre %></h1>
-        <form action="/mascotas" method="post">
-            <input
-                type="text"
-                placeholder="Agregar Nombre de la  Mascota"
-                class="form-control my-2"
-                name="nombre"
-            >
-            <input
-                type="text"
-                placeholder="Agregar Descripcion de la  Mascota"
-                class="form-control my-2"
-                name="descripcion"
-            >
-            <button
-                class="btn btn-success btn-block" 
-                type="submit"     
-            >
-            Agregar Mascota
-            </button>
-        </form>
+        <h1> <%= mascotaDB.nombre %> </h1>
     </div>
 <%- include("template/footer") %>
