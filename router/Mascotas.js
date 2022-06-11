@@ -105,10 +105,10 @@ router.get('/:id/editar', async(req, res) => {
     const mascotaDB = await Mascota.find({_id : id})
     console.log(mascotaDB)
     res.render('editar', {
-        mascotaDB : mascotaDB,
+        mascota : mascotaDB,
         id : id
     })
-    console.log(res.mascotaDB)
+    console.log(res.mascota)
 })
 
 module.exports = router;
