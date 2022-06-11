@@ -52,7 +52,7 @@ router.get('/:id', async(req, res) => {
         console.log(mascotaDB)
 
         res.render('detalle', {
-            mascota : mascotaDB,
+            mascotaDB : mascotaDB,
             //Para que el usuario no ponga una id inexistente ponemos el error a falso
             error : false,
             id : id,
