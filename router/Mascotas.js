@@ -47,13 +47,17 @@ router.get('/:id', async(req, res) => {
 
         const NombreMascota = mascotaDB.nombre
 
+        const DescripcionMascota = mascotaDB.descripcion
+
         console.log(mascotaDB)
-        console.log(NombreMascota)
 
         res.render('detalle', {
             mascota : mascotaDB,
             //Para que el usuario no ponga una id inexistente ponemos el error a falso
             error : false,
+            id : id,
+            NombreMascota : NombreMascota,
+            DescripcionMascota : DescripcionMascota
         })
 
     } catch (error) {
@@ -62,7 +66,9 @@ router.get('/:id', async(req, res) => {
         res.render('detalle', {
             error : true,
             mensaje : "No se encuentra el id del objeto que usted selecciono",
-            id : id
+            id : id,
+            NombreMascota : NombreMascota,
+            DescripcionMascota : DescripcionMascota
         })
     }
 })
