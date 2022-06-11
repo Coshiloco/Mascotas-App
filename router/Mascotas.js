@@ -32,7 +32,6 @@ router.get('/:id/editar', async(req, res) => {
         mascota : masco,
         id : id
     })
-    console.log(res.mascota)
 })
 
 router.post('/', async(req,res) =>{
