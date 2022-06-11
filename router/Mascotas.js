@@ -27,9 +27,9 @@ router.get('/crear', (req, res) =>{
 
 router.get('/:id/editar', async(req, res) => {
     const id = req.params.id
-    const mascotaDB = await Mascota.find({_id : id})
+    const masco = await Mascota.findById({_id : id})
     res.render('editar', {
-        mascota : mascotaDB,
+        mascota : masco,
         id : id
     })
     console.log(res.mascota)
