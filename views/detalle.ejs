@@ -13,7 +13,8 @@
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Descripción</th>
-                    <th scope="col">Acción</th>
+                    <th scope="col">Elminar Mascota</th>
+                    <th scope="col">Editar Mascota</th>
                   </tr>
                 </thead>
                 <tbody>         
@@ -21,10 +22,29 @@
                         <th scope="row"><%= mascotaDB.id %> </th>
                         <td><%= mascotaDB.nombre %></td>
                         <td><%= mascotaDB.descripcion %></td>
-                        <td>@mdo</td>
+                        <td><button
+                          class="btn btn-danger btn-sm"
+                          id="btnEliminar"
+                        >
+                        Eliminar Mascota
+                        </button></td>
+                        <td><button
+                        
+                        
+                          >
+                        Editar Mascota
+                        </button></td>
                     </tr>
                 </tbody>
               </table>
        <% } %> 
     </div>
 <%- include("template/footer") %>
+
+<script>
+  const btnEliminar = document.querySelector('#btnEliminar')
+  
+  btnEliminar.addEventListener('click', () => {
+    console.log('me diste click')
+  })
+</script>
