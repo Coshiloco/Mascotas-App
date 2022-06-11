@@ -80,9 +80,8 @@ router.delete('/:id', async(req, res) => {
         if (mascotaDB) {
             res.json({
                 estado : true,
-                NombreMascota : `${mascotaDB.nombre}`,
                 id : `${id}`,
-                mensaje : `La mascota con el ID : ${id} y con el NombreMascota: ${NombreMascota}
+                mensaje : `La mascota con el ID : ${id} y con el NombreMascota: ${mascotaDB.nombre}
                 ha sido elminada de la BBDD con exito` 
             })
         } else {
