@@ -99,4 +99,13 @@ router.delete('/:id', async(req, res) => {
     }
 })
 
+
+router.get('/:id/editar', async(req, res) => {
+    const mascotaDB = await Mascota.find({_id : id})
+    res.render('editar', {
+        mascotaDB : mascotaDB,
+        id : id
+    })
+})
+
 module.exports = router;
