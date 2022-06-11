@@ -47,6 +47,15 @@
   
   btnEliminar.addEventListener('click', async() => {
    const id = btnEliminar.dataset.id
-   console.log(id)
+   try {
+    // Al fetch tenemos que pasarle por parametros la ruta del objeto que queremos eliminar su id
+    //Como segundo parametro pasamos el metodo que se va a ejecutar en este caso el delete para elminar mascota
+    const datosmascota = await fetch(`/mascotas/${id}`, {
+      method : 'delete'
+    })
+    const respuestaDelete = await data.json()
+    } catch (e) {
+    console.log(e)
+    }
   })
 </script>
