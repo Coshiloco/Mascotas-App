@@ -38,7 +38,11 @@ router.post('/', async(req,res) =>{
 router.get('/:id', async(req, res) => {
     
     //En  mongo DB guion bajo viene el id la propiedad del Objeto almacenado en nuestra BBDD
-    const id = req.params.id 
+    const id = req.params.id
+
+    const nombre = req.params.nombre
+
+    const descripcion = req.params.descripcion
 
     try {
 
@@ -51,7 +55,9 @@ router.get('/:id', async(req, res) => {
             mascota : mascotaDB,
             //Para que el usuario no ponga una id inexistente ponemos el error a falso
             error : false,
-            id : id
+            id : id,
+            nombre : nombre,
+            descripcion : descripcion
         })
 
     } catch (error) {
@@ -60,7 +66,9 @@ router.get('/:id', async(req, res) => {
         res.render('detalle', {
             error : true,
             mensaje : "No se encuentra el id del objeto que usted selecciono",
-            id : id
+            id : id,
+            nombre : nombre,
+            descripcion : descripcion
         })
     }
 })
