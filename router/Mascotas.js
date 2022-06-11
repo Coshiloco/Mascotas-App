@@ -50,7 +50,8 @@ router.get('/:id', async(req, res) => {
         res.render('detalle', {
             mascota : mascotaDB,
             //Para que el usuario no ponga una id inexistente ponemos el error a falso
-            error : false
+            error : false,
+            id : id
         })
 
     } catch (error) {
@@ -58,7 +59,8 @@ router.get('/:id', async(req, res) => {
         //Si salata al catch por el usuario haber introducido una id mal que le renderize error
         res.render('detalle', {
             error : true,
-            mensaje : "No se encuentra el id del objeto que usted selecciono"
+            mensaje : "No se encuentra el id del objeto que usted selecciono",
+            id : id
         })
     }
 })
