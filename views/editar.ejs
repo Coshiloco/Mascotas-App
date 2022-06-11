@@ -1,5 +1,10 @@
 <%- include("template/cabecera", {tituloWeb: 'Editar la Mascota Seleccionada'}) %>
     <div class="container">
-        <h1> <%= mascotaDB.nombre %> </h1>
+        <h1 id="peneprueba"> <%= mascotaDB.nombre %> </h1>
     </div>
 <%- include("template/footer") %>
+
+<script>
+    const prueba = document.querySelector('#peneprueba')
+    console.log(prueba)
+</script>
