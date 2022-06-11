@@ -44,7 +44,6 @@
 
 <script>
   const btnEliminar = document.querySelector('#btnEliminar')
-  
   btnEliminar.addEventListener('click', async() => {
    const id = btnEliminar.dataset.id
    try {
@@ -54,7 +53,11 @@
       method : 'delete'
     })
     const res = await data.json()
-    console.log(data)
+    if (res.estado == true) {
+      window.location.href = '/mascotas'
+    } else {
+      console.log(res)
+    }
     } catch (e) {
     console.log(e)
     }
