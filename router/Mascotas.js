@@ -40,9 +40,9 @@ router.get('/:id', async(req, res) => {
     //En  mongo DB guion bajo viene el id la propiedad del Objeto almacenado en nuestra BBDD
     const id = req.params.id
 
-    const nombre = req.params.nombre
+    const nombre = req.body.nombre
 
-    const descripcion = req.params.descripcion
+    const descripcion = req.body.descripcion
 
     try {
 
