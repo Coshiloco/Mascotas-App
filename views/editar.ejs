@@ -1,6 +1,25 @@
 <%- include("template/cabecera", {tituloWeb: 'Editar la Mascota Seleccionada'}) %>
     <div class="container">
         <h1>Editar Mascota cuya ID es : <%= mascotaDB.id %> y cuyo Nombre es <%= mascotaDB.nombre %> </h1>
+        <hr></hr>
+        <h2>Datos de la Mascota seleccionada</h2>
+        <hr>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>         
+                <tr>
+                    <th scope="row"><%= mascotaDB.id %> </th>
+                    <td><%= mascotaDB.nombre %></td>
+                    <td><%= mascotaDB.descripcion %></td>
+                </tr>
+            </tbody>
+          </table>
     </div>
 <%- include("template/footer") %>
 
