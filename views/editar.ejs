@@ -20,6 +20,26 @@
                 </tr>
             </tbody>
           </table>
+          <form action="/mascotas" method="post">
+            <input
+                type="text"
+                placeholder="Agregar Nombre de la  Mascota"
+                class="form-control my-2"
+                name="nombre"
+            >
+            <input
+                type="text"
+                placeholder="Agregar Descripcion de la  Mascota"
+                class="form-control my-2"
+                name="descripcion"
+            >
+            <button
+                class="btn btn-success btn-block" 
+                type="submit"     
+            >
+            Editar la Mascota seleccionada 
+            </button>
+        </form>
     </div>
 <%- include("template/footer") %>
 
