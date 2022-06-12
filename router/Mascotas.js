@@ -25,13 +25,31 @@ router.get('/crear', (req, res) =>{
     res.render('crear')
 })
 
-router.get('/:id/editar', async(req, res) => {
+router.put('/:id/editar', async(req, res) => {
     const id = req.params.id
-    const mascotaDB = await Mascota.findById({_id : id})
-    res.render('editar', {
-        mascotaDB : mascotaDB,
-        id : id
-    })
+    const body = req.body
+    console.log(id)
+    console.log('body', body)
+    try {
+        const mascotaDB = await Mascota.findByIdAndUpdate(
+            id, body, { useFindAndModify: false }
+        )
+        console.log(mascotaDB)
+        res.json({
+            "estado": true,
+            mascotaDB : mascotaDB,
+            "mensaje" : `La mascota con el ID : ${id} y con el NombreMascota: ${mascotaDB.nombre}
+            ha sido modificada de la BBDD con exito` 
+        })
+    } catch (error) {
+        console.log(error)
+        res.json({
+            estado: false,
+            mascotaDB : mascotaDB,
+            "mensaje" : `La mascota con el ID : ${id} y con el NombreMascota: ${mascotaDB.nombre}
+            no ha sido modificada de la BBDD con exito` 
+        })
+    }
 })
 
 router.post('/', async(req,res) =>{
