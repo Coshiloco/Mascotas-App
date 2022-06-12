@@ -20,7 +20,7 @@
                 </tr>
             </tbody>
           </table>
-          <form id="formularioeditar">
+          <form id="formularioeditar" data-id="<%= mascotaDB.id %>">
             <input
                 type="text"
                 placeholder="Editar Nombre de la  Mascota"
@@ -37,7 +37,7 @@
             >
             <button
                 class="btn btn-success btn-block" 
-                type="submit"     
+                type="submit"
             >
             Editar la Mascota seleccionada 
             </button>
@@ -49,8 +49,10 @@
     const formularioeditar = document.querySelector('#formularioeditar')
     formularioeditar.addEventListener('submit', (e) => {
         e.preventDefault()
-        const nombre = formularioeditar.elements['nombre'].value
-        console.log(nombre)
+        const nombre = document.querySelector('#NombreInput').value
+        const descripcion = document.querySelector('#DescripcionInput').value
+        const id = formularioeditar.dataset.id
+        console.log(id)
     })
 </script>
 
