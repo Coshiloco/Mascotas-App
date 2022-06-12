@@ -26,12 +26,14 @@
                 placeholder="Editar Nombre de la  Mascota"
                 class="form-control my-2"
                 name="nombre"
+                id="NombreInput"
             >
             <input
                 type="text"
                 placeholder="Editar Descripcion de la  Mascota"
                 class="form-control my-2"
                 name="descripcion"
+                id="DescripcionInput"
             >
             <button
                 class="btn btn-success btn-block" 
@@ -47,7 +49,8 @@
     const formularioeditar = document.querySelector('#formularioeditar')
     formularioeditar.addEventListener('submit', (e) => {
         e.preventDefault()
-        console.log('submit')
+        const nombre = formularioeditar.elements['nombre'].value
+        console.log(nombre)
     })
 </script>
 
