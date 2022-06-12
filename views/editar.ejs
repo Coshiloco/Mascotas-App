@@ -47,12 +47,29 @@
 
 <script>
     const formularioeditar = document.querySelector('#formularioeditar')
-    formularioeditar.addEventListener('submit', (e) => {
+    formularioeditar.addEventListener('submit', async(e) => {
         e.preventDefault()
         const nombre = document.querySelector('#NombreInput').value
         const descripcion = document.querySelector('#DescripcionInput').value
         const id = formularioeditar.dataset.id
-        console.log(id)
+        try {
+            const data = await fetch(`/mascotas/${id}/editar`, {
+                method: 'put',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body : JSON.stringify({
+                    nombre : nombre,
+                    descripcion : descripcion,
+                    id : id
+                })
+            })
+            const res = await data.json()
+            console.log(res)
+        } catch (error) {
+            console.log(error)
+        }
     })
 </script>
 
