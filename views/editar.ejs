@@ -20,7 +20,7 @@
                 </tr>
             </tbody>
           </table>
-          <form>
+          <form id="formularioeditar">
             <input
                 type="text"
                 placeholder="Editar Nombre de la  Mascota"
@@ -42,4 +42,12 @@
         </form>
     </div>
 <%- include("template/footer") %>
+
+<script>
+    const formularioeditar = document.querySelector('#formularioeditar')
+    formularioeditar.addEventListener('submit', (e) => {
+        e.preventDefault()
+        console.log('submit')
+    })
+</script>
 
